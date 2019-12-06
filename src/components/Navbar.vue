@@ -1,12 +1,14 @@
 <template>
   <div class="pure-menu pure-menu-horizontal">
     <div class="container">
-      <router-link to="/" class="pure-menu-heading pure-menu-link"
+      <router-link :to="{ path: '/' }" class="pure-menu-heading pure-menu-link"
         >Home</router-link
       >
       <ul class="pure-menu-list">
         <li class="pure-menu-item">
-          <router-link class="pure-menu-link" to="/about">About</router-link>
+          <router-link :to="{ path: '/new' }" class="pure-menu-link"
+            >New</router-link
+          >
         </li>
       </ul>
     </div>
