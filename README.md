@@ -1,3 +1,5 @@
+A simple HN clone, built as Vue.js practice following a [tutorial](https://medium.com/hackernoon/building-a-hackernews-clone-in-vuejs-f746b1eb2aa4).
+
 # hn-clone
 
 ## Project setup
