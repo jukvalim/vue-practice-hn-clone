@@ -6,41 +6,22 @@
 
 <script>
 
-import axios from "axios";
 import Item from '@/components/Item.vue'
 export default {
   name: "home",
   components: {
     'item': Item
   },
-  data: function() {
+  data: function () {
     return {
-      err: "",
-      stories: []
-    };
+      err: '',
+      stories: this.$store.state.topStories
+    }
   },
-  created: function() {
-    axios
-      .get("https://hacker-news.firebaseio.com/v0/topstories.json")
-      .then(result => {
-        this.results = result.data.slice(0, 10);
-        this.results.forEach(element => {
-          axios
-            .get(
-              "https://hacker-news.firebaseio.com/v0/item/" + element + ".json"
-            )
-            .then(result => {
-              this.stories.push(result);
-            })
-            .catch(err => {
-              /* eslint no-console: ["error", { allow: ["warn", "error", "log"] }] */
-              console.log(err);
-            });
-        });
-      })
-      .catch(err => {
-        this.err = err;
-      });
+  created: function () {
+    if (this.$store.state.topStories.length === 0) {
+      this.$store.dispatch('fetch_top_stories')
+    }
   }
 };
 </script>
