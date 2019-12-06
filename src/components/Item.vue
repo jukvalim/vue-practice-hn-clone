@@ -2,10 +2,10 @@
   <div class="story">
     <span class="score">{{ story.data.score }}</span>
     <router-link :to="{ path: '/story/' + story.data.id }"
-      >{{ story.data.title }}<span
-        >{{ story.data.url | host }}</span
-      ></router-link
-    ><br />
+      >{{ story.data.title }}</router-link
+    > <span
+        ><a :href="story.data.url">{{ story.data.url }}</a></span
+      ><br />
     <span class="meta">
       by {{ story.data.by }} | {{ story.data.time }} Ago | {{
       story.data.descendants }} comments

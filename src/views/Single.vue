@@ -2,8 +2,8 @@
   <div class="container">
     <h2>{{ story.title }}</h2>
     <p>Score: {{ story.score }}</p>
-    <p>{{ story.url }}</p>
-    <div v-for="comment in comments" :key="comment">
+    <p><a :href="story.url">{{ story.url }}</a></p>
+    <div v-for="comment in comments" :key="comment.id">
       <div class="comment-wrap">
         <div class="comment-block">
           <p class="comment-text">{{ comment.text }}</p>
