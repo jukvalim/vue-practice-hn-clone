@@ -2,6 +2,12 @@ A simple HN clone, built as Vue.js practice following a [tutorial](https://mediu
 
 # hn-clone
 
+## Project setup and running in Docker
+```bash
+docker build -t hnclone --target development .
+docker run --rm -it -p 127.0.0.1:8080:8080 -v $(pwd)/:/app/ hnclone
+```
+
 ## Project setup
 ```
 yarn install
